@@ -11,9 +11,18 @@ const userSchema = new Schema<IUser>(
   {
     username: {
       type: String,
+      unique: true,
+      required: true,
+      trim: true,
     },
     email: {
       type: String,
+      unique: true,
+      required: true,
+      match: [
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // Standard email regex
+        'Please enter a valid email address', // Custom error message
+      ],
     },
     thoughts: [
       {

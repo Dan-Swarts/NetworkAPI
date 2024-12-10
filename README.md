@@ -33,25 +33,94 @@ npm run start
 
 ## Usage
 
+Open your API testing tool, such as Postman or Insomnia, and utilize the following routes. If you changed the active port using a .env file, make sure to change it from 3001. For all posts, include a JSON body matching the schema deonstrated. 
+
 User routes:
 ```shell
 # Get all Users
 GET localhost:3001/api/users/
+
 # Get specific User
 GET localhost:3001/api/users/{userID}
+
 # Create User
 POST localhost:3001/api/users/
+{
+	"username":"example",
+	"email":"example@example.com"
+}
+
 # Update User
 POST localhost:3001/api/users/{userID}
+{
+	"username":"example",
+	"email":"example@example.com"
+}
+
 # Delete User
 DELETE localhost:3001/api/users/{userID}
+
 # Add a friend
 POST localhost:3001/api/users/friends/{userID}
+{
+	"friendUsername":"example"
+}
+
 # Remove a friend
 DELETE localhost:3001/api/users/friends/{userID}
 ```
 
 
+Thought routes:
+```shell
+# Get all Thoughts
+GET localhost:3001/api/thoughts/
+
+# Get specific Thought
+GET localhost:3001/api/thoughts/{thoughtID}
+
+# Create Thought
+POST localhost:3001/api/thoughts/
+{
+	"thoughtText":"example",
+	"userId":"6757e3ddf36c8d98521ba307"
+}
+
+# Update Thought
+POST localhost:3001/api/thoughts/{thoughtID}
+{
+	"thoughtText":"example"
+}
+
+# Delete Thought
+DELETE localhost:3001/api/thoughts/{thoughtID}
+```
+
+Reaction routes:
+```shell
+# Get all Reactions
+GET localhost:3001/api/reactions/
+
+# Get specific Reaction
+GET localhost:3001/api/reactions/{reactionID}
+
+# Create Reaction
+POST localhost:3001/api/reactions/
+{
+	"reactionBody":"example",
+	"userId":"6757e3ddf36c8d98521ba307",
+	"thoughtId":"6757f654b0fea0803fd5ccbc"
+}
+
+# Update Reaction
+POST localhost:3001/api/reactions/{reactionID}
+{
+	"reactionBody":"example"
+}
+
+# Delete Reaction
+DELETE localhost:3001/api/reactions/{reactionID}
+```
 
 
 ## Contributing

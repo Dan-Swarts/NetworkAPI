@@ -35,24 +35,23 @@ npm run start
 
 User routes:
 ```shell
-- GET localhost:3001/api/users/ 
-- GET localhost:3001/api/users/{userID}
-- POST localhost:3001/api/users/
-- POST localhost:3001/api/users/{userID}
-- DELETE localhost:3001/api/users/{userID}
-- POST localhost:3001/api/users/friends/{userID}
-- DELETE localhost:3001/api/users/friends/{userID}
+# Get all Users
+GET localhost:3001/api/users/
+# Get specific User
+GET localhost:3001/api/users/{userID}
+# Create User
+POST localhost:3001/api/users/
+# Update User
+POST localhost:3001/api/users/{userID}
+# Delete User
+DELETE localhost:3001/api/users/{userID}
+# Add a friend
+POST localhost:3001/api/users/friends/{userID}
+# Remove a friend
+DELETE localhost:3001/api/users/friends/{userID}
 ```
 
-![Add a screenshot](./relative/path/to/img.jpg?raw=true)
 
-- step 2
-
-![Add a screenshot](./relative/path/to/img.jpg?raw=true)
-
-- step 3
-
-![Add a screenshot](./relative/path/to/img.jpg?raw=true)
 
 
 ## Contributing

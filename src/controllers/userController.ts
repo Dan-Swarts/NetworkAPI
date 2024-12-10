@@ -99,10 +99,7 @@ export const addFriend = async (req: Request, res: Response) => {
       { $addToSet: { friends: friend._id } }
     );
 
-    return res.status(200).json({
-      message: "Friend added successfully!",
-      friends: user.friends, // Optionally return the updated friends list
-    });
+    return res.status(200).json({ user });
   } catch (error) {
     return res.status(500).json(error);
   }

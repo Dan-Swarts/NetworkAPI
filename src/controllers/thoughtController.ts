@@ -71,3 +71,26 @@ export const deleteThought = async (req: Request, res: Response) => {
     return res.status(500).json(error);
   }
 };
+
+// edit a thought
+export const updateThought = async (req: Request, res: Response) => {
+  try {
+    const { thoughtId } = req.params;
+    const { thoughtText } = req.body;
+
+    // find and update the thought
+    const updatedThought = await Thought.findByIdAndUpdate(
+      thoughtId,
+      { thoughtText },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedThought) {
+      return res.status(404).json({ message: "Thought not found." });
+    }
+
+    return res.status(200).json(updatedThought);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};

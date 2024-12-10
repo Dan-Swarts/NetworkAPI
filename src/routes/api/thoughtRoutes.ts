@@ -1,9 +1,19 @@
-import { Router } from 'express';
+import { Router } from "express";
 const router = Router();
-import { getThoughts, getSpecificThought, createThought, deleteThought } from '../../controllers/thoughtController.js';
+import {
+  getThoughts,
+  getSpecificThought,
+  createThought,
+  deleteThought,
+  updateThought,
+} from "../../controllers/thoughtController.js";
 
-router.route('/').get(getThoughts).post(createThought);
+router.route("/").get(getThoughts).post(createThought);
 
-router.route('/:thoughtId').get(getSpecificThought).delete(deleteThought);
+router
+  .route("/:thoughtId")
+  .get(getSpecificThought)
+  .delete(deleteThought)
+  .post(updateThought);
 
 export default router;

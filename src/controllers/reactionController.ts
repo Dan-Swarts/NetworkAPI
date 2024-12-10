@@ -78,3 +78,26 @@ export const deleteReaction = async (req: Request, res: Response) => {
     return res.status(500).json(error);
   }
 };
+
+// edit a thought
+export const updateReaction = async (req: Request, res: Response) => {
+  try {
+    const { reactionId } = req.params;
+    const { reactionBody } = req.body;
+
+    // find and update the thought
+    const updatedReaction = await Reaction.findByIdAndUpdate(
+      reactionId,
+      { reactionBody },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedReaction) {
+      return res.status(404).json({ message: "Reaction not found." });
+    }
+
+    return res.status(200).json(updatedReaction);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};

@@ -11,8 +11,14 @@ Description
 
 ## Installation
 
+Notes: 
+- This program runs on port 3001 by default. Ensure that this port is open, or add a .env file to specify the PORT variable. 
+- This program requires Node and MongoDB to be installed on your machine.
+
 Resources:
 - [Node Installation](https://nodejs.org/en/download/package-manager)
+- [MongoDB Installation](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb)
+
 ```shell
 # Step 1: clone this repository
 git clone https://github.com/Dan-Swarts/NetworkAPI.git
@@ -27,7 +33,16 @@ npm run start
 
 ## Usage
 
-- step 1
+User routes:
+```shell
+- GET localhost:3001/api/users/ 
+- GET localhost:3001/api/users/{userID}
+- POST localhost:3001/api/users/
+- POST localhost:3001/api/users/{userID}
+- DELETE localhost:3001/api/users/{userID}
+- POST localhost:3001/api/users/friends/{userID}
+- DELETE localhost:3001/api/users/friends/{userID}
+```
 
 ![Add a screenshot](./relative/path/to/img.jpg?raw=true)
 

@@ -1,6 +1,7 @@
 import { Reaction, Thought, User } from "../models/index.js";
 import { Request, Response } from "express";
 
+// get all reactions
 export const getReactions = async (_req: Request, res: Response) => {
   try {
     const reactions = await Reaction.find();
@@ -10,6 +11,7 @@ export const getReactions = async (_req: Request, res: Response) => {
   }
 };
 
+// get a reaction by ID
 export const getSpecificReaction = async (req: Request, res: Response) => {
   try {
     const reaction = await Reaction.findOne({ _id: req.params.reactionId });
@@ -54,6 +56,24 @@ export const createReaction = async (req: Request, res: Response) => {
 
     return res.status(200).json(reaction);
 
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
+// delete a reaction
+export const deleteReaction = async (req: Request, res: Response) => {
+  try {
+    const { reactionId } = req.params;
+
+    // delete the reaction
+    const reaction = await Reaction.findByIdAndDelete(reactionId);
+
+    if (!reaction) {
+      return res.status(404).json({ message: "Reaction not found." });
+    }
+
+    return res.status(200).json({ message: "Reaction successfully deleted." });
   } catch (error) {
     return res.status(500).json(error);
   }

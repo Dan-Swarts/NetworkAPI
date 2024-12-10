@@ -53,3 +53,21 @@ export const createThought = async (req: Request, res: Response) => {
     return res.status(500).json(error);
   }
 };
+
+// delete a thought
+export const deleteThought = async (req: Request, res: Response) => {
+  try {
+    const { thoughtnId } = req.params;
+
+    // delete
+    const thought = await Thought.findByIdAndDelete(thoughtnId);
+
+    if (!thought) {
+      return res.status(404).json({ message: "Thought not found." });
+    }
+
+    return res.status(200).json({ message: "Thought successfully deleted." });
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};

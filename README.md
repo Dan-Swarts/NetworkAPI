@@ -11,13 +11,17 @@ Description
 
 ## Installation
 
-- step 1
+Resources:
+- [Node Installation](https://nodejs.org/en/download/package-manager)
 ```shell
-# Installation instructions 1
+# Step 1: clone this repository
+git clone https://github.com/Dan-Swarts/NetworkAPI.git
 
-# Installation instructions 2
+# Step 2: install dependencies:
+npm i
 
-# Installation instructions 3
+# Step 3: run the program:
+npm run start
 
 ```
 

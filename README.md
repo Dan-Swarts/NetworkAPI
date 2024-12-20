@@ -40,6 +40,84 @@ npm run start
 
 Open your API testing tool, such as Postman or Insomnia, and utilize the following routes. If you changed the active port using a .env file, make sure to change it from 3001. For all posts, include a JSON body matching the schema deonstrated.
 
+- Get Users
+
+![Get Users](./Assets/GetUsers.gif)
+
+<br>
+<br>
+<br>
+
+- Create Users
+
+![Create Users](./Assets/CreateUser.gif)
+
+<br>
+<br>
+<br>
+
+- Delete User
+
+![Delete User](./Assets/delteUser.gif)
+
+<br>
+<br>
+<br>
+
+- Create Thought
+
+![Create Thought](./Assets/createThought.gif)
+
+<br>
+<br>
+<br>
+
+- Update Thought
+
+![Update Thought](./Assets/UpdateThought.gif)
+
+<br>
+<br>
+<br>
+
+- Delete Thought
+
+![Delete Thought](./Assets/deleteThought.gif)
+
+<br>
+<br>
+<br>
+
+- Create Reaction
+
+![Create Reaction](./Assets/createReaction.gif)
+
+<br>
+<br>
+<br>
+
+- Get Reaction
+
+![Get Reaction](./Assets/GetReaction.gif)
+
+<br>
+<br>
+<br>
+
+- Update Reaction
+
+![Update Reaction](./Assets/UpdateReaction.gif)
+
+<br>
+<br>
+<br>
+
+- Delete Reaction
+
+![Delete Reaction](./Assets/deleteReaction.gif)
+
+## Routes:
+
 User routes:
 
 ```shell
@@ -57,7 +135,7 @@ POST localhost:3001/api/users/
 }
 
 # Update User
-POST localhost:3001/api/users/{userID}
+PUT localhost:3001/api/users/{userID}
 {
 	"username":"example",
 	"email":"example@example.com"
@@ -96,7 +174,7 @@ POST localhost:3001/api/thoughts/
 }
 
 # Update Thought
-POST localhost:3001/api/thoughts/{thoughtID}
+PUT localhost:3001/api/thoughts/{thoughtID}
 {
 	"thoughtText":"example"
 }
@@ -123,7 +201,7 @@ POST localhost:3001/api/reactions/
 }
 
 # Update Reaction
-POST localhost:3001/api/reactions/{reactionID}
+PUT localhost:3001/api/reactions/{reactionID}
 {
 	"reactionBody":"example"
 }

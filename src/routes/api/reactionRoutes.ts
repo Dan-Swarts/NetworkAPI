@@ -14,6 +14,6 @@ router
   .route("/:reactionId")
   .get(getSpecificReaction)
   .delete(deleteReaction)
-  .post(updateReaction);
+  .put(updateReaction);
 
 export default router;

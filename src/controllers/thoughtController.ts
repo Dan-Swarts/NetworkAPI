@@ -28,11 +28,10 @@ export const getSpecificThought = async (req: Request, res: Response) => {
 // create a thought
 export const createThought = async (req: Request, res: Response) => {
   try {
-    
     // check the request body for a valid user
     const user = await User.findById(req.body.userId);
     if (!user) {
-      return res.status(404).json({message: "No user found with that ID",});
+      return res.status(404).json({ message: "No user found with that ID" });
     }
 
     // create a thought with the user's username
@@ -48,7 +47,6 @@ export const createThought = async (req: Request, res: Response) => {
       { new: true }
     );
     return res.status(200).json(thought);
-    
   } catch (error) {
     return res.status(500).json(error);
   }
@@ -57,10 +55,9 @@ export const createThought = async (req: Request, res: Response) => {
 // delete a thought
 export const deleteThought = async (req: Request, res: Response) => {
   try {
-    const { thoughtnId } = req.params;
+    const { thoughtId } = req.params;
 
-    // delete
-    const thought = await Thought.findByIdAndDelete(thoughtnId);
+    const thought = await Thought.findByIdAndDelete(thoughtId);
 
     if (!thought) {
       return res.status(404).json({ message: "Thought not found." });

@@ -14,6 +14,6 @@ router
   .route("/:thoughtId")
   .get(getSpecificThought)
   .delete(deleteThought)
-  .post(updateThought);
+  .put(updateThought);
 
 export default router;

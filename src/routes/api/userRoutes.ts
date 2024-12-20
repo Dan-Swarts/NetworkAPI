@@ -16,7 +16,6 @@ router
   .route("/:userId")
   .get(getSpecificUser)
   .delete(deleteUser)
-  .post(updateUser);
-
+  .put(updateUser);
 
 export default router;

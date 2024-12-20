@@ -1,21 +1,26 @@
 # Network API
-![MIT License](https://img.shields.io/badge/License-MIT-green) 
+
+![MIT License](https://img.shields.io/badge/License-MIT-green)
+
 ## Description
 
 Description
 
 ## 📁 Table of Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 
 ## Installation
 
-Notes: 
-- This program runs on port 3001 by default. Ensure that this port is open, or add a .env file to specify the PORT variable. 
+Notes:
+
+- This program runs on port 3001 by default. Ensure that this port is open, or add a .env file to specify the PORT variable.
 - This program requires Node and MongoDB to be installed on your machine.
 
 Resources:
+
 - [Node Installation](https://nodejs.org/en/download/package-manager)
 - [MongoDB Installation](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb)
 
@@ -33,9 +38,10 @@ npm run start
 
 ## Usage
 
-Open your API testing tool, such as Postman or Insomnia, and utilize the following routes. If you changed the active port using a .env file, make sure to change it from 3001. For all posts, include a JSON body matching the schema deonstrated. 
+Open your API testing tool, such as Postman or Insomnia, and utilize the following routes. If you changed the active port using a .env file, make sure to change it from 3001. For all posts, include a JSON body matching the schema deonstrated.
 
 User routes:
+
 ```shell
 # Get all Users
 GET localhost:3001/api/users/
@@ -68,10 +74,13 @@ POST localhost:3001/api/users/friends/{userID}
 
 # Remove a friend
 DELETE localhost:3001/api/users/friends/{userID}
+{
+	"friendUsername":"example"
+}
 ```
 
-
 Thought routes:
+
 ```shell
 # Get all Thoughts
 GET localhost:3001/api/thoughts/
@@ -97,6 +106,7 @@ DELETE localhost:3001/api/thoughts/{thoughtID}
 ```
 
 Reaction routes:
+
 ```shell
 # Get all Reactions
 GET localhost:3001/api/reactions/
@@ -121,7 +131,6 @@ POST localhost:3001/api/reactions/{reactionID}
 # Delete Reaction
 DELETE localhost:3001/api/reactions/{reactionID}
 ```
-
 
 ## Contributing
 
